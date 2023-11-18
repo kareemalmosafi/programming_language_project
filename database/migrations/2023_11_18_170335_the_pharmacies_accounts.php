@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pharmacies_accounts',function(Blueprint $table)
+        Schema::create('the_pharmacies_accounts',function(Blueprint $table)
         {
            
 $table->increments('id');
@@ -26,6 +26,7 @@ $table->timestamps();
      */
     public function down(): void
     {
-        Schema::dropIfExists('pharmacies_accounts');
+        Schema::dropIfExists('the_pharmacies_accounts');
     }
 };
+

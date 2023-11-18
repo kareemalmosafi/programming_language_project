@@ -11,20 +11,21 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('favorites',function(Blueprint $table)
+        Schema::create('the_order',function(Blueprint $table)
         {
-           
 $table->increments('id');
-$table->integer('product_id')->unsigned();
+$table->integer('pharmacie_id')->unsigned();
 $table->integer('warehouse_id')->unsigned();
-$table->integer('pharmaices_id')->unsigned();
+$table->string('status');
+$table->string('pay_status');
+$table->json('content');
 $table->timestamps();
 
 
-$table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
+$table->foreign('pharmacie_id')->references('id')->on('the_pharmacies_accounts')->onDelete('cascade');
 $table->foreign('warehouse_id')->references('id')->on('warehouse_accounts')->onDelete('cascade');
-$table->foreign('pharmaices_id')->references('id')->on('pharmacies_accounts')->onDelete('cascade');
         });
+
     }
 
     /**
@@ -32,6 +33,6 @@ $table->foreign('pharmaices_id')->references('id')->on('pharmacies_accounts')->o
      */
     public function down(): void
     {
-        Schema::dropIfExists('favorites');
+         Schema::dropIfExists('orders');
     }
 };
