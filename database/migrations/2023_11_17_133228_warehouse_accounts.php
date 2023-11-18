@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('warehouse_accounts',function(Blueprint $table)
         {
 $table->increments('id');
-$table->string('email');
+$table->string('email')->unique();
 $table->string('password');
 $table->timestamps();
         });

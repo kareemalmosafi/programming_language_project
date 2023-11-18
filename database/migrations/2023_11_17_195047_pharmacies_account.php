@@ -15,7 +15,7 @@ return new class extends Migration
         {
            
 $table->increments('id');
-$table->integer('number');
+$table->string('number')->unique();
 $table->string('password');
 $table->timestamps();
         });

@@ -9,8 +9,13 @@ class pharmacies_account extends Model
 {
     use HasFactory;
     protected   $fillable=[
+
         'number',
         'password',
        
     ];
+    public function order()
+    {
+        return $this->hasMany('App/Modles/order');
+    }
 }

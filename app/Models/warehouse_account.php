@@ -13,4 +13,9 @@ class warehouse_account extends Model
         'password',
        
     ];
+    public function product()
+    {
+        return $this->hasMany('App/Modles/product');
+    }
+
 }

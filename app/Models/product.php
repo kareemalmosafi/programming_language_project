@@ -15,5 +15,11 @@ class product extends Model
         'company',
         'quantity',
         'ex_date',
+        'warehouse_id',
     ];
+
+    public function warehouse_account()
+    {
+        return $this->belongsTo('App/Models/warehouse_account','warehouse_id');
+    }
 }

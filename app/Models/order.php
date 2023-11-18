@@ -17,4 +17,13 @@ class order extends Model
 
        
     ];
+    public function warehouse_account()
+    {
+        return $this->belongsTo('App/Models/warehouse_account','warehouse_id');
+    }
+
+    public function pharmacies_account()
+    {
+        return $this->belongsTo('App/Models/pharmacies_account','pharmacies_id');
+    }
 }
