@@ -44,6 +44,10 @@ return [
             'driver' => 'passport',
             'provider' => 'users',
         ],
+        'warehouse_account' => [
+            'driver' => 'passport',
+            'provider' => 'warehouse_accounts',
+        ],
     ],
 
     /*
@@ -67,6 +71,10 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
+        ],
+        'warehouse_accounts' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\warehouse_account::class,
         ],
 
         // 'users' => [
